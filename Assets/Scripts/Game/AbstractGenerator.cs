@@ -23,4 +23,10 @@ public abstract class AbstractGenerator<T> : MonoBehaviour where T : MonoBehavio
         temp?.SetActive(true);
         return temp?.GetComponent<T>();
     }
+
+    public virtual void ReturnObject(T obj)
+    {
+        obj.transform.parent = transform;
+        obj.gameObject.SetActive(false);
+    }
 }

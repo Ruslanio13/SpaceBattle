@@ -6,12 +6,19 @@ public class PlayerMover : MonoBehaviour, IMovable
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-            Move();
+        if (Input.GetKey(KeyCode.W))
+            Move(Mathf.Sin(transform.eulerAngles.z - 90) * -transform.up);
+        if (Input.GetKey(KeyCode.D))
+            Move(Mathf.Cos(transform.eulerAngles.z - 90) * -transform.right);
+        if (Input.GetKey(KeyCode.S))
+            Move(Mathf.Sin(transform.eulerAngles.z - 90) * transform.up);
+        if (Input.GetKey(KeyCode.A))
+            Move(Mathf.Cos(transform.eulerAngles.z - 90) * transform.right);
+
     }
 
-    public void Move()
+    public void Move(Vector3 dir)
     {
-        transform.position += transform.up * (_moveSpeed * Time.deltaTime);
+        transform.position += dir.normalized * (_moveSpeed * Time.deltaTime);
     }
 }

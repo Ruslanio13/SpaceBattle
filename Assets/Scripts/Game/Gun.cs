@@ -1,9 +1,13 @@
 using UnityEngine;
 
+[RequireComponent (typeof(BulletGenerator))]
 public class Gun : MonoBehaviour
 {
-    [SerializeField] private BulletGenerator _generator;
-
+    private BulletGenerator _generator;
+    private void Start()
+    {
+        _generator = GetComponent<BulletGenerator>();
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -17,5 +21,6 @@ public class Gun : MonoBehaviour
             return;
         bullet.gameObject.transform.position = transform.position;
         bullet.gameObject.transform.rotation = transform.rotation;
+        bullet.transform.parent = Camera.main.transform;
     }
 }

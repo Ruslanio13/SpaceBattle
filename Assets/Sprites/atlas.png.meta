@@ -135,8 +135,8 @@ TextureImporter:
         x: 129
         y: 240
         width: 13
-        height: 16
-      alignment: 0
+        height: 12
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -1157,6 +1157,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: atlas_49
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 242
+        width: 7
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069e6138288f6054998a44c3abc1eb6e
+      internalID: 61364541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1186,6 +1207,7 @@ TextureImporter:
       atlas_17: 1035951446
       atlas_37: -172648112
       atlas_14: 1913145396
+      atlas_49: 2034873388
       atlas_22: 1963261638
       atlas_25: -151339835
       atlas_29: 2969401
