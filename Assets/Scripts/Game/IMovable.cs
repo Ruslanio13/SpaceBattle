@@ -1,4 +1,4 @@
 public interface IMovable
 {
-    protected void Move();
+    public void Move();
 }
