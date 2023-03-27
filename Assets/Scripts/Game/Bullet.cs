@@ -12,8 +12,10 @@ public class Bullet : Projectile, IMovable
         transform.position += dir * (_speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.CompareTag("Player"))
+            return;
         gameObject.SetActive(false);
         if (collision.gameObject.TryGetComponent(out IHitable enemyHealth))
             Hit(enemyHealth);

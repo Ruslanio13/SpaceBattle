@@ -19,7 +19,7 @@ public class Gun : MonoBehaviour
         var bullet = _generator.GetObject();
         if (bullet == null)
             return;
-        bullet.gameObject.transform.position = transform.position;
+        
         bullet.gameObject.transform.rotation = transform.rotation;
         bullet.transform.parent = Camera.main.transform;
     }
