@@ -43,13 +43,14 @@ public class PlayerMover : MonoBehaviour, IMovable
         if(!collision.gameObject.CompareTag("Wall"))
             return;
         var tolerance = 0.1f;
-        var contact = collision.GetContact(0);
-        _collisionDetected[0] = contact.normal.y < -tolerance;
-        _collisionDetected[1] = contact.normal.x < -tolerance;
-        _collisionDetected[2] = contact.normal.y > tolerance;
-        _collisionDetected[3] = contact.normal.x > tolerance;
-        
-        Debug.Log(contact.normal);
+        foreach (var contact in collision.contacts)
+        {
+            _collisionDetected[0] = contact.normal.y < -tolerance;
+            _collisionDetected[1] = contact.normal.x < -tolerance;
+            _collisionDetected[2] = contact.normal.y > tolerance;
+            _collisionDetected[3] = contact.normal.x > tolerance;
+            Debug.Log(contact.normal);
+        }
     }
 
     public void OnCollisionExit2D(Collision2D other)
