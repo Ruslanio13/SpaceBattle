@@ -1,20 +1,28 @@
+using System;
 using UnityEngine;
 
 public class PlayerMover : MonoBehaviour, IMovable
 {
     [SerializeField] private float _moveSpeed;
+    private Vector3 _direction;
+
+    private void Start()
+    {
+        _direction = Vector3.zero;
+    }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-            Move(Mathf.Sin(transform.eulerAngles.z - 90) * -transform.up);
-        if (Input.GetKey(KeyCode.D))
-            Move(Mathf.Cos(transform.eulerAngles.z - 90) * -transform.right);
-        if (Input.GetKey(KeyCode.S))
-            Move(Mathf.Sin(transform.eulerAngles.z - 90) * transform.up);
-        if (Input.GetKey(KeyCode.A))
-            Move(Mathf.Cos(transform.eulerAngles.z - 90) * transform.right);
+        SetDirection();
+        Move(_direction);
+    }
 
+    private void SetDirection()
+    {
+        var dx = Input.GetAxisRaw("Horizontal");
+        var dy = Input.GetAxisRaw("Vertical");
+        _direction.x = dx;
+        _direction.y = dy;
     }
 
     public void Move(Vector3 dir)
