@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour, IMovable
+public class Bullet : Projectile, IMovable
 {
-    [SerializeField] private float _speed;
-
     private void Update()
     {
         Move(transform.up);
@@ -17,6 +15,12 @@ public class Bullet : MonoBehaviour, IMovable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         gameObject.SetActive(false);
-        Debug.Log("Aww");
+        if (collision.gameObject.TryGetComponent(out IHitable enemyHealth))
+            Hit(enemyHealth);
+    }
+
+    protected override void Hit(IHitable obj)
+    {
+        obj.TakeHit(_damagePoints);
     }
 }
