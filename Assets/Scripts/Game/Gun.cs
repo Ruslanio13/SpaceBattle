@@ -4,6 +4,7 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     private BulletGenerator _generator;
+    [SerializeField] private Transform _generatePoint;
     private void Start()
     {
         _generator = GetComponent<BulletGenerator>();
@@ -19,7 +20,7 @@ public class Gun : MonoBehaviour
         var bullet = _generator.GetObject();
         if (bullet == null)
             return;
-        bullet.gameObject.transform.position = transform.position;
+        bullet.gameObject.transform.position = _generatePoint.position;
         bullet.gameObject.transform.rotation = transform.rotation;
         bullet.transform.parent = Camera.main.transform;
     }

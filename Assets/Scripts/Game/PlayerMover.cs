@@ -28,4 +28,13 @@ public class PlayerMover : MonoBehaviour, IMovable
     {
         transform.position += dir.normalized * (_moveSpeed * Time.deltaTime);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            if ((collision.transform.position.y - transform.position.y) * _direction.y > 0)
+                _direction.y = -1;
+        }           
+    }
 }
