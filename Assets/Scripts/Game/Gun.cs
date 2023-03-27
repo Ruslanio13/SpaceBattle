@@ -21,6 +21,7 @@ public class Gun : MonoBehaviour
             return;
         
         bullet.gameObject.transform.rotation = transform.rotation;
+        bullet.Move(transform.up);
         bullet.transform.parent = Camera.main.transform;
     }
 }

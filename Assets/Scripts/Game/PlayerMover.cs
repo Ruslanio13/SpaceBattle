@@ -1,16 +1,17 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof(Rigidbody2D))]
 public class PlayerMover : MonoBehaviour, IMovable
 {
     [SerializeField] private float _moveSpeed;
     private Vector3 _direction;
     private bool[] _collisionDetected;
+    private Rigidbody2D rigidbody;
     private void Start()
     {
         _collisionDetected = new bool[4];
         _direction = Vector3.zero;
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -35,27 +36,6 @@ public class PlayerMover : MonoBehaviour, IMovable
 
     public void Move(Vector3 dir)
     {
-        transform.position += dir.normalized * (_moveSpeed * Time.deltaTime);
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(!collision.gameObject.CompareTag("Wall"))
-            return;
-        var tolerance = 0.1f;
-        foreach (var contact in collision.contacts)
-        {
-            _collisionDetected[0] = contact.normal.y < -tolerance;
-            _collisionDetected[1] = contact.normal.x < -tolerance;
-            _collisionDetected[2] = contact.normal.y > tolerance;
-            _collisionDetected[3] = contact.normal.x > tolerance;
-            Debug.Log(contact.normal);
-        }
-    }
-
-    public void OnCollisionExit2D(Collision2D other)
-    {
-        for (int i = 0; i < _collisionDetected.Length; i++)
-            _collisionDetected[i] = false;
+        rigidbody.velocity = dir.normalized * (_moveSpeed );
     }
 }

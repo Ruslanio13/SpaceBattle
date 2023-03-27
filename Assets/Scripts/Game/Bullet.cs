@@ -1,15 +1,18 @@
 using UnityEngine;
 
+[RequireComponent (typeof(Rigidbody2D))]
 public class Bullet : Projectile, IMovable
 {
-    private void Update()
-    {
-        Move(transform.up);
-    }
+    private Rigidbody2D _rigidbody2D;
 
+    private void OnEnable()
+    {
+        if (_rigidbody2D == null)
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
     public void Move(Vector3 dir)
     {
-        transform.position += dir * (_speed * Time.deltaTime);
+        _rigidbody2D.velocity = dir * _speed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -186,10 +186,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnbreakableWall
       objectReference: {fileID: 0}
-    - target: {fileID: 6368837213119637933, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
-      propertyPath: m_SpriteTilingProperty.drawMode
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
 --- !u!1001 &577613111
@@ -312,6 +308,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnbreakableWall (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6368837213119637933, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368837213119637933, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 5.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
 --- !u!1001 &659587541
@@ -365,10 +369,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7476670134690569608, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 963194227}
     - target: {fileID: 7697730474720456035, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
       propertyPath: m_Name
       value: Player
@@ -522,6 +522,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: UnbreakableWall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6368837213119637933, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368837213119637933, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 5.4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
 --- !u!1001 &1617801985
@@ -586,6 +594,14 @@ PrefabInstance:
     - target: {fileID: 5548970231049517537, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
       propertyPath: m_Name
       value: UnbreakableWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368837213119637933, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368837213119637933, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ab1d78e870efc41a2ff5ef8decddc6, type: 3}
