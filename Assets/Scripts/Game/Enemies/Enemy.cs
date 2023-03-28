@@ -3,15 +3,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Enemy : Entity, IMovable, IRotatable
 {
+    [SerializeField] protected float _attackCooldown;
     [SerializeField] private float _moveSpeed;
 
     protected Transform _target;
     protected Rigidbody2D _rigidbody;
     
-    
-    private void Start()
+    protected override void Start()
     {
-        _health = new Health(healthPoints);
+        base.Start();
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -37,7 +37,7 @@ public abstract class Enemy : Entity, IMovable, IRotatable
     public void Rotate(Vector3 rotateToDir)
     {
         float rotZ = Mathf.Atan2(rotateToDir.y, rotateToDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ);
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ - 90);
     }
 
     public override void TakeHit(int damagePoints)
@@ -47,5 +47,4 @@ public abstract class Enemy : Entity, IMovable, IRotatable
             Die();
     }
 
-    
 }

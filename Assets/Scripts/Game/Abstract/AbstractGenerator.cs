@@ -4,7 +4,7 @@ using System.Linq;
 
 public abstract class AbstractGenerator<T> : MonoBehaviour where T : MonoBehaviour
 {
-    [SerializeField] private int _capacity;
+    [SerializeField] protected int _capacity;
     [SerializeField] protected T _template;
     [SerializeField] protected List<GameObject> _generatedObjects = new List<GameObject>();
     

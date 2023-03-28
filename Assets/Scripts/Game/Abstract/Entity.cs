@@ -8,6 +8,10 @@ public abstract class Entity : MonoBehaviour, IHitable
     [SerializeField] protected int healthPoints;
     protected Health _health;
     
+    protected virtual void Start()
+    {
+        _health = new Health(healthPoints);
+    }
     
     public virtual void ResetHealth()
     {

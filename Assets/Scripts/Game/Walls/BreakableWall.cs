@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class BreakableWall : Entity
 {
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         _health = new Health(healthPoints);
     }
 }

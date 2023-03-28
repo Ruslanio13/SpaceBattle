@@ -17,15 +17,12 @@ public class Bullet : Projectile, IMovable
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if(collision.gameObject.CompareTag(_allianceTag))
             return;
         gameObject.SetActive(false);
-        if (collision.gameObject.TryGetComponent(out IHitable enemyHealth))
-            Hit(enemyHealth);
+        if (collision.gameObject.TryGetComponent(out IHitable target))
+            Attack(target);
     }
+    
 
-    protected override void Hit(IHitable obj)
-    {
-        obj.TakeHit(_damagePoints);
-    }
 }
