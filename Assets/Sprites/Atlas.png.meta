@@ -242,7 +242,7 @@ TextureImporter:
         width: 256
         height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -250,6 +250,48 @@ TextureImporter:
       bones: []
       spriteID: 87fee48f535421ce48b0e59caff63d78
       internalID: -1376118125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 440
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0270d841198b5d67a908e915eb8cd65d
+      internalID: -894924283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 472
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43165a9a1a55f6276a79657da8d95cc6
+      internalID: -1694791119
       vertices: []
       indices: 
       edges: []
@@ -265,10 +307,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Atlas_6: -894924283
       Atlas_3: -1632134864
       Atlas_2: -1809117093
       Atlas_5: -1376118125
       Atlas_1: -280495495
+      Atlas_7: -1694791119
       Atlas_0: 1622118578
       Atlas_4: -661202021
   spritePackingTag: 

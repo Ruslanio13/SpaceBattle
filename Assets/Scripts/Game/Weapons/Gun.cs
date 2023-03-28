@@ -16,7 +16,7 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-        var bullet = _generator.GetObject();
+        var bullet = _generator.TryGetObject();
         if (bullet == null)
             return;
         

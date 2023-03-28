@@ -6,12 +6,12 @@ public class PlayerMover : MonoBehaviour, IMovable
     [SerializeField] private float _moveSpeed;
     private Vector3 _direction;
     private bool[] _collisionDetected;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D _rigidbody;
     private void Start()
     {
         _collisionDetected = new bool[4];
         _direction = Vector3.zero;
-        rigidbody = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -36,6 +36,6 @@ public class PlayerMover : MonoBehaviour, IMovable
 
     public void Move(Vector3 dir)
     {
-        rigidbody.velocity = dir.normalized * (_moveSpeed );
+        _rigidbody.velocity = dir.normalized * (_moveSpeed );
     }
 }
