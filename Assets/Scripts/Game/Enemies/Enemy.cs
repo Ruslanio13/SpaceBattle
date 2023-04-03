@@ -42,8 +42,8 @@ public abstract class Enemy : Entity, IMovable, IRotatable
 
     public override void TakeHit(int damagePoints)
     {
-        _health.Decrease(damagePoints);
-        if (_health.CurrentHealthPoints <= 0)
+        Health.OnDecreased.Invoke(damagePoints);
+        if (Health.CurrentHealthPoints <= 0)
             Die();
     }
 
