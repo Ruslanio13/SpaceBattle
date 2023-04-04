@@ -42,7 +42,7 @@ public class PlayerMover : MonoBehaviour, IMovable, IUpgradeable
         _rigidbody.velocity = dir.normalized * (_moveSpeed );
     }
 
-    public void GetPercentageUpgrade(int upgradePercent)
+    public void GetUpgrade(int upgradePercent)
     {
         _moveSpeed += _moveSpeed * upgradePercent / 100f;
     }

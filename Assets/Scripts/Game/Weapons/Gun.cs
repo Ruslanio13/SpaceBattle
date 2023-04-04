@@ -3,13 +3,15 @@ using UnityEngine;
 [RequireComponent (typeof(BulletGenerator))]
 
 
-public class Gun : MonoBehaviour
+public class Gun : MonoBehaviour, IUpgradeable
 {
-    [SerializeField] private float _cooldown;
+    [SerializeField] private float _initialCooldown;
+    private float _cooldown;
     private float _lastShotTime;
     private BulletGenerator _generator;
     private void Start()
     {
+        _cooldown = _initialCooldown;
         _generator = GetComponent<BulletGenerator>();
         _lastShotTime = Time.time;
     }
@@ -30,5 +32,10 @@ public class Gun : MonoBehaviour
         bullet.Move(transform.up);
         bullet.transform.parent = Camera.main.transform;
         _lastShotTime = Time.time;
+    }
+
+    public void GetUpgrade(int percentage)
+    {
+        _cooldown -= _initialCooldown * percentage;
     }
 }

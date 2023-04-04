@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &7694977 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7697730474720456035, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
-  m_PrefabInstance: {fileID: 659587541}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &31792069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -814,14 +809,10 @@ PrefabInstance:
       propertyPath: _cooldown
       value: 0.2
       objectReference: {fileID: 0}
-    - target: {fileID: 4158005973310845003, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
-      propertyPath: _startSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4242073298320300566, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
+    - target: {fileID: 1986620546119142317, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1510804518}
     - target: {fileID: 4692699994727383131, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -1797,20 +1788,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6659329906521684192, guid: 8451bd1c865fcb9429a68a9bbbb104ac, type: 3}
   m_PrefabInstance: {fileID: 659587541}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1643037555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7694977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19e186b7f5e397811bb6d0e76f0e2e5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 3
-  healthBar: {fileID: 1510804518}
 --- !u!1 &1806453289
 GameObject:
   m_ObjectHideFlags: 0

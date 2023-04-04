@@ -1,5 +1,5 @@
 using UnityEngine.Events;
-public class Health : IDecreasable
+public class Health : IDecreasable, IUpgradeable
 {
     public int CurrentHealthPoints { get; private set; }
     public int StartHealthPoints { get; private set; }
@@ -19,6 +19,11 @@ public class Health : IDecreasable
         OnDecreased.RemoveAllListeners();
     }
 
+    public void GetUpgrade(int amount)
+    {
+        Increase(amount);
+    }
+
     public void Reset()
     {
         CurrentHealthPoints = StartHealthPoints;
@@ -27,5 +32,10 @@ public class Health : IDecreasable
     public void Decrease(int points)
     {
         CurrentHealthPoints -= points;
+    }
+    
+    public void Increase(int points)
+    {
+        CurrentHealthPoints += points;
     }
 }
