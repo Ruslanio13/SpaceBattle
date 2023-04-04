@@ -1,14 +1,17 @@
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody2D))]
-public class PlayerMover : MonoBehaviour, IMovable
+public class PlayerMover : MonoBehaviour, IMovable, IUpgradeable
 {
-    [SerializeField] private float _moveSpeed;
+    [SerializeField] private float _startSpeed;
+    private float _moveSpeed;
     private Vector3 _direction;
     private bool[] _collisionDetected;
     private Rigidbody2D _rigidbody;
+    
     private void Start()
     {
+        _moveSpeed = _startSpeed;
         _collisionDetected = new bool[4];
         _direction = Vector3.zero;
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -37,5 +40,10 @@ public class PlayerMover : MonoBehaviour, IMovable
     public void Move(Vector3 dir)
     {
         _rigidbody.velocity = dir.normalized * (_moveSpeed );
+    }
+
+    public void GetPercentageUpgrade(int upgradePercent)
+    {
+        _moveSpeed += _moveSpeed * upgradePercent / 100f;
     }
 }

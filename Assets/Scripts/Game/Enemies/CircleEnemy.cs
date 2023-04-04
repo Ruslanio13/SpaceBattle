@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(BulletGenerator))]
 public class CircleEnemy : Enemy
@@ -32,4 +33,6 @@ public class CircleEnemy : Enemy
             yield return cooldown;
         }
     }
+    
+    
 }

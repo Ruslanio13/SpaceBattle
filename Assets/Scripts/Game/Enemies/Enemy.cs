@@ -1,17 +1,25 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BonusHandler))]
+
 public abstract class Enemy : Entity, IMovable, IRotatable
 {
     [SerializeField] protected float _attackCooldown;
     [SerializeField] private float _moveSpeed;
-
+    [SerializeField] private BonusHandler _bonusHandler;
+    
     protected Transform _target;
     protected Rigidbody2D _rigidbody;
-    
+
+    private UnityEvent OnDeath; 
+        
     protected override void Start()
     {
         base.Start();
+        OnDeath = new UnityEvent();
+        OnDeath.AddListener(_bonusHandler.TryDropBonus);
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -47,4 +55,10 @@ public abstract class Enemy : Entity, IMovable, IRotatable
             Die();
     }
 
+    protected override void Die()
+    {
+        base.Die();
+        OnDeath?.Invoke();
+    }
+    
 }

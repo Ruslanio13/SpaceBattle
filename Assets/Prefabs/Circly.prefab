@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2211396416040683171}
   - component: {fileID: 4432370280946091125}
   - component: {fileID: 2456683439065141832}
+  - component: {fileID: 1237905220674480606}
   m_Layer: 6
   m_Name: Circly
   m_TagString: Enemy
@@ -72,6 +73,7 @@ MonoBehaviour:
   healthPoints: 3
   _attackCooldown: 1
   _moveSpeed: 1
+  _bonusHandler: {fileID: 1237905220674480606}
 --- !u!212 &2211396416040683171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -155,3 +157,17 @@ MonoBehaviour:
   _capacity: 10
   _template: {fileID: 7580941796918356398, guid: 480182b40dff2ca7c9b109afaf40bca6, type: 3}
   _generatedObjects: []
+--- !u!114 &1237905220674480606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7881355002745113869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43f1238f3ef3f569a99f6ae81e8c5b33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bonusTemplates:
+  - {fileID: 2998560418369379708, guid: d7552bdfa87c313bdbad89d24d36777d, type: 3}

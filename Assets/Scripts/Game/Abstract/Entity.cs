@@ -24,7 +24,7 @@ public abstract class Entity : MonoBehaviour, IHitable
             Die();
     }
 
-    protected void Die()
+    protected virtual void Die()
     {
         gameObject.SetActive(false);
     }
