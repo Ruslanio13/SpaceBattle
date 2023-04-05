@@ -1,14 +1,22 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyGenerator : AbstractGenerator<Enemy>
 {
     [SerializeField] private int _enemiesToSpawn;
     [SerializeField] private int _spawnCooldown;
-    [SerializeField] private Transform _targetTransform;
+    [SerializeField] private List<Entity> _targets;
     
+    private List<Transform> _targetsTransforms;
+
     private void Start()
     {
+        _targetsTransforms = new List<Transform>();
+        foreach (var target in _targets)
+            _targetsTransforms.Add(target.transform);
+        
+        GameStateMachine.Instance.OnGameOver.AddListener(StopAllCoroutines);
         Generate();
         StartCoroutine(Spawn());
     }
@@ -26,14 +34,17 @@ public class EnemyGenerator : AbstractGenerator<Enemy>
     
     public override Enemy TryGetObject()
     {
+        var random = Random.Range(0, _targets.Count);
         var newEnemy = base.TryGetObject();
-        if (_enemiesToSpawn > 0 && newEnemy != null)
-        {
-            _enemiesToSpawn--;
-            newEnemy.SetTarget(_targetTransform);
-            newEnemy.ResetHealth();
-        }
+        if (newEnemy is null)
+            return null;
+
+        _enemiesToSpawn--;
+        newEnemy.SetTarget(_targetsTransforms[random]);
+        newEnemy.ResetHealth();
+        GameStateMachine.Instance.OnGameOver.AddListener(newEnemy.RunAway);
         
         return newEnemy;
     }
+    
 }

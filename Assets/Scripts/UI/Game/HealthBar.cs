@@ -29,6 +29,8 @@ public class HealthBar : MonoBehaviour
     }
     private void DecreaseHearts(int amount)
     {
+        if(transform.childCount == 0)
+            return;
         Transform heartFromHealthBar;
         for (int i = 0; i < amount; i++)
         {

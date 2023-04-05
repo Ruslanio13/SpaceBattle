@@ -1,12 +1,16 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class Entity : MonoBehaviour, IHitable
 { 
     [SerializeField] protected int healthPoints;
     public Health Health { get; protected set; }
-    
+    protected UnityEvent OnDeath; 
+
     protected virtual void Start()
     {
+        OnDeath = new UnityEvent();
         Health = new Health(healthPoints);
     }
     
@@ -27,5 +31,11 @@ public abstract class Entity : MonoBehaviour, IHitable
     protected virtual void Die()
     {
         gameObject.SetActive(false);
+        OnDeath?.Invoke();
+    }
+    
+    private void OnApplicationQuit()
+    {
+        OnDeath.RemoveAllListeners();
     }
 }
