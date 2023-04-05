@@ -7,7 +7,7 @@ public abstract class Projectile : MonoBehaviour, IHit
     protected string _allianceTag; 
     public void Attack(IHitable obj)
     {
-        obj.TakeHit(_damagePoints);
+        obj.TakeHit();
     }
 
     public void SetAlliance(string tag)

@@ -21,9 +21,9 @@ public abstract class Entity : MonoBehaviour, IHitable
         Health.Reset();
     }
     
-    public virtual void TakeHit(int damagePoints)
+    public virtual void TakeHit()
     {
-        Health.OnDecreased.Invoke(damagePoints);
+        Health.OnDecreased.Invoke();
         if (Health.CurrentHealthPoints <= 0)
             Die();
     }

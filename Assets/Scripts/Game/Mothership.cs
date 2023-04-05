@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Mothership : Entity
 {
+    [SerializeField] private MothershipHealthBar healthBar;
+
     protected override void Start()
     {
         base.Start();
+        healthBar.Initialize(this);
         OnDeath.AddListener(() => GameStateMachine.Instance.OnGameOver.Invoke());
     }
 }
