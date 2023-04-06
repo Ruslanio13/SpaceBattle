@@ -4,7 +4,7 @@ using UnityEngine;
 public class BonusHandler : MonoBehaviour
 {
     [SerializeField] private List<Bonus> _bonusTemplates;
-    [SerializeField] private float _probability;
+    [SerializeField] private int _probability;
 
     public void TryDropBonus()
     {
