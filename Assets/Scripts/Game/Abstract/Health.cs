@@ -5,23 +5,27 @@ public class Health : IDecreasable, IUpgradeable
     public int StartHealthPoints { get; private set; }
 
     public UnityEvent OnDecreased;
+    public UnityEvent OnIncreased;
 
     public Health(int startHealthPoints)
     {
         OnDecreased = new UnityEvent();
+        OnIncreased = new UnityEvent();
         StartHealthPoints = startHealthPoints;
         CurrentHealthPoints = startHealthPoints;
         OnDecreased.AddListener(Decrease);
+        OnIncreased.AddListener(Increase);
     }
 
     ~Health()
     {
         OnDecreased.RemoveAllListeners();
+        OnIncreased.RemoveAllListeners();
     }
 
     public void GetUpgrade(int amount)
     {
-        Increase();
+        OnIncreased.Invoke();
     }
 
     public void Reset()
@@ -36,6 +40,7 @@ public class Health : IDecreasable, IUpgradeable
     
     public void Increase()
     {
-        CurrentHealthPoints++;
+        if (CurrentHealthPoints < StartHealthPoints)
+            CurrentHealthPoints++;
     }
 }

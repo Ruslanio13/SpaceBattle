@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class SpeedUp : Bonus
 {
     public override void GiveBonus(IUpgradeable target)

@@ -1,9 +1,7 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(BonusHandler))]
 
 public abstract class Enemy : Entity, IMovable, IRotatable
 {

@@ -8,6 +8,7 @@ public abstract class HealthBar : MonoBehaviour
     {
         _health = healthOwner.Health;
         _health.OnDecreased.AddListener(UpdateHealthBar);
+        _health.OnIncreased.AddListener(UpdateHealthBar);
         UpdateHealthBar();
     }
 
