@@ -360,6 +360,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4631676821110356005, guid: f5b896e7969396842a1d75b961cd301b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4631676821110356005, guid: f5b896e7969396842a1d75b961cd301b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5797543832735856925, guid: f5b896e7969396842a1d75b961cd301b, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
