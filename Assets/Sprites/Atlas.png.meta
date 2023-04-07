@@ -129,16 +129,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Atlas_0
+      name: Mothership
       rect:
         serializedVersion: 2
-        x: 0
-        y: 480
-        width: 32
-        height: 32
+        x: 185
+        y: 478
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -150,16 +150,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_1
+      name: AllyProj
       rect:
         serializedVersion: 2
-        x: 0
-        y: 472
-        width: 4
-        height: 8
+        x: 125
+        y: 494
+        width: 6
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -171,16 +171,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_2
+      name: Unbreakable
       rect:
         serializedVersion: 2
-        x: 0
-        y: 343
-        width: 32
-        height: 32
+        x: 23
+        y: 410
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -192,16 +192,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_3
+      name: Breakable
       rect:
         serializedVersion: 2
-        x: 0
-        y: 375
-        width: 32
-        height: 32
+        x: 23
+        y: 478
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -213,16 +213,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_4
+      name: Player
       rect:
         serializedVersion: 2
-        x: 48
-        y: 480
-        width: 32
-        height: 32
+        x: 220
+        y: 478
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -234,16 +234,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_5
+      name: BG
       rect:
         serializedVersion: 2
-        x: 81
-        y: 255
-        width: 256
-        height: 256
+        x: 254
+        y: 254
+        width: 258
+        height: 258
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -255,16 +255,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_6
+      name: Circly
       rect:
         serializedVersion: 2
-        x: 0
-        y: 440
-        width: 32
-        height: 32
+        x: 57
+        y: 478
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -276,16 +276,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_7
+      name: EnemyProj
       rect:
         serializedVersion: 2
-        x: 4
-        y: 472
-        width: 4
-        height: 8
+        x: 125
+        y: 484
+        width: 6
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -297,16 +297,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_8
+      name: WhiteBlock
       rect:
         serializedVersion: 2
-        x: 32
-        y: 464
-        width: 16
-        height: 16
+        x: 131
+        y: 476
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -318,16 +318,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_9
+      name: AttackUp
       rect:
         serializedVersion: 2
-        x: 48
-        y: 464
-        width: 16
-        height: 16
+        x: 149
+        y: 476
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -339,16 +339,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_10
+      name: Heart
       rect:
         serializedVersion: 2
-        x: 32
-        y: 496
-        width: 16
-        height: 16
+        x: 167
+        y: 494
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -360,16 +360,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_11
+      name: SpeedUp
       rect:
         serializedVersion: 2
-        x: 64
-        y: 464
-        width: 16
-        height: 16
+        x: 149
+        y: 494
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 0, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -381,16 +381,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_12
+      name: HealthUP
       rect:
         serializedVersion: 2
-        x: 32
-        y: 480
-        width: 16
-        height: 16
+        x: 131
+        y: 494
+        width: 18
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -402,16 +402,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_13
+      name: Biggie
       rect:
         serializedVersion: 2
-        x: 0
-        y: 408
-        width: 32
-        height: 32
+        x: 91
+        y: 478
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -423,16 +423,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_14
+      name: Fasty
       rect:
         serializedVersion: 2
-        x: 32
-        y: 408
-        width: 32
-        height: 32
+        x: 220
+        y: 444
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -444,16 +444,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_15
+      name: Fog
       rect:
         serializedVersion: 2
-        x: 32
-        y: 375
-        width: 32
-        height: 32
+        x: 23
+        y: 444
+        width: 34
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -465,16 +465,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_16
+      name: Storm
       rect:
         serializedVersion: 2
-        x: 32
-        y: 343
-        width: 32
-        height: 32
+        x: 23
+        y: 376
+        width: 34
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -486,16 +486,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_17
+      name: PhoenixAlive
       rect:
         serializedVersion: 2
-        x: 32
-        y: 311
-        width: 32
-        height: 32
+        x: 57
+        y: 410
+        width: 34
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -507,22 +507,64 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_18
+      name: PhoenixDead
       rect:
         serializedVersion: 2
-        x: 0
-        y: 311
-        width: 32
-        height: 32
+        x: 57
+        y: 444
+        width: 34
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 5be4afbca236040499a6983464e0872b
       internalID: 98116680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SFX
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 410
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6301273ec41411fdbad16879bc97b70
+      internalID: -169049879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 444
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7df2b833cc215966a1a59f19b4ac74a
+      internalID: 1484807527
       vertices: []
       indices: 
       edges: []
@@ -538,25 +580,27 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Atlas_15: 399722764
-      Atlas_6: -894924283
-      Atlas_18: 98116680
-      Atlas_8: -600214255
-      Atlas_14: 1818108031
-      Atlas_3: -1632134864
-      Atlas_2: -1809117093
-      Atlas_11: -768729206
-      Atlas_12: 2114497435
-      Atlas_5: -1376118125
-      Atlas_1: -280495495
-      Atlas_13: 994684073
-      Atlas_7: -1694791119
-      Atlas_10: 78369404
-      Atlas_0: 1622118578
-      Atlas_9: -545579108
-      Atlas_4: -661202021
-      Atlas_16: -548687291
-      Atlas_17: -246909459
+      Circly: -894924283
+      HealthUP: 2114497435
+      SFX: -169049879
+      EnemyProj: -1694791119
+      WhiteBlock: -600214255
+      Mothership: 1622118578
+      BG: -1376118125
+      Heart: 78369404
+      Fasty: 1818108031
+      Biggie: 994684073
+      Breakable: -1632134864
+      AllyProj: -280495495
+      Fog: 399722764
+      Unbreakable: -1809117093
+      Storm: -548687291
+      PhoenixAlive: -246909459
+      Player: -661202021
+      Music: 1484807527
+      PhoenixDead: 98116680
+      AttackUp: -545579108
+      SpeedUp: -768729206
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

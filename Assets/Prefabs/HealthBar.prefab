@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc357a480bd3e1a47afa7421b825cba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enadledHearth: {fileID: -600214255, guid: 2ad9b9f1ece86bd43ab083310dc729fd, type: 3}
+  _enadledHearth: {fileID: 78369404, guid: 2ad9b9f1ece86bd43ab083310dc729fd, type: 3}
   _hearths: []
   _buffer: {fileID: 4631676821110356005}
   _healthBarTransform: {fileID: 4628976536215842511}
