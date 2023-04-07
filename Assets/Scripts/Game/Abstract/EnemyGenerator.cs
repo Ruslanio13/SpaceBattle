@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class EnemyGenerator : AbstractGenerator<Enemy>
 {
-    [SerializeField] private int _enemiesToSpawn;
     [SerializeField] private int _spawnCooldown;
     [SerializeField] private List<Entity> _targets;
+    [SerializeField] private int _startEnemiesToSpawn;
+    private int _enemiesToSpawn;
     
     private List<Transform> _targetsTransforms;
 
     private void Start()
     {
+        _enemiesToSpawn = _startEnemiesToSpawn;
         _targetsTransforms = new List<Transform>();
         foreach (var target in _targets)
             _targetsTransforms.Add(target.transform);
@@ -46,5 +48,6 @@ public class EnemyGenerator : AbstractGenerator<Enemy>
         
         return newEnemy;
     }
-    
+
+    public int GetEnemiesAmount() => _startEnemiesToSpawn;
 }

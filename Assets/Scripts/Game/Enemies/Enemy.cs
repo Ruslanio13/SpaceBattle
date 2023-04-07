@@ -19,6 +19,7 @@ public abstract class Enemy : Entity, IMovable, IRotatable
     {
         base.Start();
         OnDeath.AddListener(_bonusHandler.TryDropBonus);
+        OnDeath.AddListener(VictoryChecker.Instance.onEnemyDeath.Invoke);
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
