@@ -5,6 +5,8 @@ public class LevelPreset : ScriptableObject
 {
     public List<int> Lines;
     public List<GameObject> Walls;
+    public int[] EnemiesCount;
+    public Enemy[] EnemiesPrefabs;
     public int MinLen;
     public int MaxLen;
 

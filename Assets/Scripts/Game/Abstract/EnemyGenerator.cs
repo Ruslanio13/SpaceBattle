@@ -17,10 +17,9 @@ public class EnemyGenerator : AbstractGenerator<Enemy>
         _targetsTransforms = new List<Transform>();
         foreach (var target in _targets)
             _targetsTransforms.Add(target.transform);
-        
-        GameStateMachine.Instance.OnGameOver.AddListener(StopAllCoroutines);
-        Generate();
+
         StartCoroutine(Spawn());
+        GameStateMachine.Instance.OnGameOver.AddListener(StopAllCoroutines);
     }
 
     private IEnumerator Spawn()
@@ -49,5 +48,16 @@ public class EnemyGenerator : AbstractGenerator<Enemy>
         return newEnemy;
     }
 
+    public void SetEnemyPrefab(Enemy prefab)
+    {
+        _template = prefab;
+        Generate();
+    }
+
+    public void SetEnemyAmount(int amount)
+    {
+        _enemiesToSpawn = amount;
+    }
+    
     public int GetEnemiesAmount() => _startEnemiesToSpawn;
 }

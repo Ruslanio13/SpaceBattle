@@ -13,12 +13,29 @@ public class LevelGenerator : MonoBehaviour
 
     [SerializeField] private LevelPreset def;
 
+    public static LevelGenerator Instance;
+    
     private List<int> _lines;
     private List<GameObject> _walls;
+    
+    private Enemy[] _enemiesPrefabs;
+    private int[] _enemiesCount;
+    
     private int _minLen;
     private int _maxLen;
     
     private List<Tuple<int, int>> _freeSpots;
+    
+    
+    private void Start()
+    {
+        if (Instance is null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(this);
+    }
 
     private void Update()
     {
@@ -32,17 +49,19 @@ public class LevelGenerator : MonoBehaviour
         _lines = preset.Lines;
         _minLen = preset.MinLen;
         _maxLen = preset.MaxLen;
+        _enemiesPrefabs = preset.EnemiesPrefabs;
+        _enemiesCount = preset.EnemiesCount;
+        
         
         _freeSpots = new List<Tuple<int, int>>();
-        if (_lines.Count != _walls.Count)
-            throw new Exception("Lines and walls lists in LevelGenerator are not the same size");
+        if (_lines.Count != _walls.Count || _enemiesCount.Length != _enemiesPrefabs.Length)
+            throw new Exception("Lengths in LevelGenerator are not the same size");
 
-         for(int i = 0; i < _length; i++)
+        for(int i = 0; i < _length; i++)
              for (int j = 0; j < _width; j++)
                  _freeSpots.Add(new Tuple<int, int>(i,j));
         Debug.Log(_freeSpots.Count);
         MakeMumFree();
-        MakeSpawnsFree();
         Debug.Log(_freeSpots.Count);
         
         for (int i = 0; i < _lines.Count; i++)
@@ -50,6 +69,8 @@ public class LevelGenerator : MonoBehaviour
             GenerateHorLine(_walls[i], _lines[i]);
             GenerateVertLine(_walls[i], _lines[i]);
         }
+        
+        GenerateSpawns();
     }
 
     private void MakeMumFree()
@@ -57,14 +78,6 @@ public class LevelGenerator : MonoBehaviour
         for (int i = -2; i < 4; i++)
             for (int j = 0; j < 6; j++)
                 _freeSpots.Remove(new Tuple<int, int>(_length / 2 + i, j));
-    }
-
-    private void MakeSpawnsFree()
-    {
-        for (int i = -1; i < 2; i++)
-            for (int k = -2; k < 3; k++)
-                for (int l = 0; l < 2; l++)
-                    _freeSpots.Remove(new Tuple<int, int>(_length / 2 + (int)( _centerRightSpawnX /_tileWidth) * i + k, _width - 1 - l));
     }
 
     private void GenerateHorLine(GameObject wall, int amount)
@@ -121,5 +134,20 @@ public class LevelGenerator : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private void GenerateSpawns()
+    {
+        SpawnController spawnController = FindObjectOfType<SpawnController>();
+        EnemyGenerator enemyGenerator;
+        int totalAmount = 0;
+        for (int i = 0; i < _enemiesPrefabs.Length; i++)
+        {
+            enemyGenerator = spawnController._enemySpawners[i]; 
+            enemyGenerator.SetEnemyAmount(_enemiesCount[i]);
+            enemyGenerator.SetEnemyPrefab(_enemiesPrefabs[i]);
+            totalAmount += _enemiesCount[i];
+        }
+        VictoryChecker.Instance.SetGoal(totalAmount);
     }
 }

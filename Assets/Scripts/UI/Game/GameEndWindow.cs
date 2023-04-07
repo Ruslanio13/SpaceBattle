@@ -10,7 +10,7 @@ public abstract class GameEndWindow : MonoBehaviour
     private void Start()
     {
         _menuButton.onClick.AddListener(() => SceneManager.LoadScene("Menu"));
-        _newLevelButton.onClick.AddListener(() => LoadLevel());
+        _newLevelButton.onClick.AddListener(LoadLevel);
     }
 
     protected abstract void LoadLevel();

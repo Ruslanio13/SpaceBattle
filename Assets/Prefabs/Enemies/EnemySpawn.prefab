@@ -47,6 +47,6 @@ MonoBehaviour:
   _capacity: 10
   _template: {fileID: 0}
   _generatedObjects: []
-  _enemiesToSpawn: 0
-  _spawnCooldown: 0
-  _targetTransform: {fileID: 0}
+  _spawnCooldown: 2
+  _targets: []
+  _startEnemiesToSpawn: 10

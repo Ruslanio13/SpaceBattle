@@ -1953,6 +1953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2089212413}
   - component: {fileID: 2089212412}
+  - component: {fileID: 2089212414}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1973,7 +1974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levels:
-  - {fileID: 7528357531020033347, guid: 87178eece2e7b6a4aba476693fb97c7a, type: 3}
+  - {fileID: 11400000, guid: 0b0e6636810aaaaeeb03e53e183fdd07, type: 2}
   - {fileID: 7528357531020033347, guid: f723461f49c8a9a42bb6bdac9288d660, type: 3}
   - {fileID: 7528357531020033347, guid: a51fb303fe5d6c84589c19b7781630d6, type: 3}
   - {fileID: 7528357531020033347, guid: 803993f6ed7baf648b27ff7df5990ec6, type: 3}
@@ -2006,3 +2007,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2089212414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089212411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df3135b864cb0b1ead822e4fe37e27f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _width: 23
+  _length: 43
+  _tileWidth: 0.32
+  _tileLength: 0.32
+  def: {fileID: 0}
