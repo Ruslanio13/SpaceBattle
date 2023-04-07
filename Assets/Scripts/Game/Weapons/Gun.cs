@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[RequireComponent (typeof(BulletGenerator))]
-
+[RequireComponent(typeof(BulletGenerator))]
+[RequireComponent(typeof(AudioSource))]
 
 public class Gun : MonoBehaviour, IUpgradeable
 {
@@ -9,11 +9,14 @@ public class Gun : MonoBehaviour, IUpgradeable
     private float _cooldown;
     private float _lastShotTime;
     private BulletGenerator _generator;
+    private AudioSource _audioSource;
     private void Start()
     {
         _cooldown = _initialCooldown;
         _generator = GetComponent<BulletGenerator>();
         _lastShotTime = Time.time;
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.volume = PlayerPrefs.GetFloat("SFX_Vol");
     }
     private void Update()
     {
@@ -32,6 +35,7 @@ public class Gun : MonoBehaviour, IUpgradeable
         bullet.Move(transform.up);
         bullet.transform.parent = Camera.main.transform;
         _lastShotTime = Time.time;
+        _audioSource.PlayOneShot(_audioSource.clip);
     }
 
     public void GetUpgrade(int percentage)

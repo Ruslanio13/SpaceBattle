@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-
+[RequireComponent(typeof(AudioSource))]
 public abstract class Enemy : Entity, IMovable, IRotatable
 {
     [SerializeField] protected float _attackCooldown;
@@ -11,16 +11,18 @@ public abstract class Enemy : Entity, IMovable, IRotatable
     
     protected Transform _target;
     protected Rigidbody2D _rigidbody;
-
+    
     private bool _isRunningAway;
     private BulletGenerator _generator;
-        
+    private AudioSource _audioSource;
     protected override void Start()
     {
         base.Start();
         OnDeath.AddListener(_bonusHandler.TryDropBonus);
         OnDeath.AddListener(VictoryChecker.Instance.onEnemyDeath.Invoke);
         _rigidbody = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.volume = PlayerPrefs.GetFloat("SFX_Vol");
     }
 
     private void Update()
@@ -56,6 +58,7 @@ public abstract class Enemy : Entity, IMovable, IRotatable
             bullet.transform.rotation = transform.rotation;
             bullet.Move(transform.up);
             bullet.transform.parent = Camera.main.transform;
+            _audioSource.PlayOneShot(_audioSource.clip);
             yield return cooldown;
         }
     }
