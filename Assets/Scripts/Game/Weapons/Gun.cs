@@ -36,6 +36,6 @@ public class Gun : MonoBehaviour, IUpgradeable
 
     public void GetUpgrade(int percentage)
     {
-        _cooldown -= _initialCooldown * percentage;
+        _cooldown -= _cooldown * percentage / 100f;
     }
 }

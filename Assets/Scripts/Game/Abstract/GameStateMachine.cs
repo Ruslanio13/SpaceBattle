@@ -44,6 +44,5 @@ public class GameStateMachine : MonoBehaviour
 
     public void LoadLevel(int levelNumber) => StartCoroutine(LoadCoroutine(levelNumber));
     public void ReloadLevel() => StartCoroutine(LoadCoroutine(_currentLevelNumber));
-    
     public void GoNextLevel() => StartCoroutine(LoadCoroutine(_currentLevelNumber + 1));
 }

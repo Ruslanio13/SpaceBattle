@@ -8,5 +8,7 @@ public class Player : Entity
         base.Start();
         healthBar.Initialize(this);
         OnDeath.AddListener(() => GameStateMachine.Instance.OnGameOver.Invoke());
+        GameStateMachine.Instance.OnGameOver.AddListener(() => gameObject.SetActive(false));
+        GameStateMachine.Instance.OnVictory.AddListener(() => gameObject.SetActive(false));
     }
 }

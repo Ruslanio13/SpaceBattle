@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb93d1f048166fe569991ecd0a2aecbe, type: 3}
+  m_Name: Level 5
+  m_EditorClassIdentifier: 
+  Lines: 05000000050000000000000000000000
+  Walls:
+  - {fileID: 329214998586248404, guid: 0d7f939cff6c1194a9b3574d00581909, type: 3}
+  - {fileID: 8835776459804449041, guid: 6149aa78cdec0bb459ff80ffd172ce22, type: 3}
+  - {fileID: 1561206525768898792, guid: c85b5266a81544943a7d6f5b5eb11cd1, type: 3}
+  - {fileID: 3189768998838607616, guid: e94883d021fd18b428a7ea46f2abfd4b, type: 3}
+  EnemiesCount: 020000000200000002000000
+  EnemiesPrefabs:
+  - {fileID: 5365887193806400031, guid: 0a8c68bbad4d2655b9648611c2f4c5a1, type: 3}
+  - {fileID: 5365887193806400031, guid: 0a8c68bbad4d2655b9648611c2f4c5a1, type: 3}
+  - {fileID: 5365887193806400031, guid: 0a8c68bbad4d2655b9648611c2f4c5a1, type: 3}
+  MinLen: 3
+  MaxLen: 6

@@ -11,6 +11,8 @@ public class PlayerHealthBar : HealthBar
     protected override void UpdateHealthBar()
     {
         var diff = _healthBarTransform.childCount - _health.CurrentHealthPoints;
+        if (_health.CurrentHealthPoints <= 0)
+            return;
         if (diff > 0)
             for (int i = 0; i < diff; i++)
             {
