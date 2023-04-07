@@ -40,12 +40,12 @@ public class GameStateMachine : MonoBehaviour
             Debug.Log("Loading the Scene"); 
             yield return null;
         }
-        _levelGenerator.Generate(_levels[levelNumber - 1]);
+        _levelGenerator.Generate(_levels[_currentLevelNumber - 1]);
     }
 
     public void LoadLevel(int levelNumber) => StartCoroutine(LoadCoroutine(levelNumber));
     public void ReloadLevel() => StartCoroutine(LoadCoroutine(_currentLevelNumber));
-    public void GoNextLevel()=>  StartCoroutine(LoadCoroutine(++_currentLevelNumber)); 
+    public void GoNextLevel()=>  StartCoroutine(LoadCoroutine(_currentLevelNumber + 1)); 
 
     private void TryUpdateMaxLevel()
     {
