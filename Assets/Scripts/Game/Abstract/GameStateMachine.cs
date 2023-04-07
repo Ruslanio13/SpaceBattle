@@ -27,6 +27,7 @@ public class GameStateMachine : MonoBehaviour
         
         OnGameOver = new UnityEvent();
         OnVictory = new UnityEvent();
+        OnVictory.AddListener(TryUpdateMaxLevel);
         DontDestroyOnLoad(this);
         _levelGenerator = GetComponent<LevelGenerator>();
     }
@@ -44,5 +45,11 @@ public class GameStateMachine : MonoBehaviour
 
     public void LoadLevel(int levelNumber) => StartCoroutine(LoadCoroutine(levelNumber));
     public void ReloadLevel() => StartCoroutine(LoadCoroutine(_currentLevelNumber));
-    public void GoNextLevel() => StartCoroutine(LoadCoroutine(_currentLevelNumber + 1));
+    public void GoNextLevel()=>  StartCoroutine(LoadCoroutine(++_currentLevelNumber)); 
+
+    private void TryUpdateMaxLevel()
+    {
+        int maxLvl = SaveManager.Instance.loadedSave.MaxReachedLevel;
+        SaveManager.Instance.loadedSave.SetMaxReachedLevel(Mathf.Max(maxLvl, _currentLevelNumber + 1));
+    }
 }

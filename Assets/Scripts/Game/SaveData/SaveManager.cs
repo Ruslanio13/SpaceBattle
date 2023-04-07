@@ -1,11 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SaveManager : MonoBehaviour
 {
@@ -23,6 +18,7 @@ public class SaveManager : MonoBehaviour
         
         DontDestroyOnLoad(this);
         actualSavePath = Application.persistentDataPath + "/" + saveFileName;
+        LoadGame();
     }
 
     public void LoadGame()
@@ -39,15 +35,13 @@ public class SaveManager : MonoBehaviour
         else
         {
             Debug.Log("Creating new save file!");
-            loadedSave = new SaveData
-            {
-                MaxReachedLevel = 1
-            };
+            loadedSave = new SaveData();
+            loadedSave.SetMaxReachedLevel(1);
         }
     }
     public void SaveGame()
     {
-        FileStream dataStream = new FileStream(Application.persistentDataPath + "/" + saveFileName, FileMode.Create);
+        FileStream dataStream = new FileStream(actualSavePath, FileMode.Create);
 
         BinaryFormatter converter = new BinaryFormatter();
         converter.Serialize(dataStream, loadedSave);

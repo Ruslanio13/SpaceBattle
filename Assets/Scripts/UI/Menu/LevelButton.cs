@@ -6,13 +6,15 @@ using TMPro;
 public class LevelButton : MonoBehaviour
 {
     [SerializeField] private int _levelNumber;
-    [SerializeField] private TMP_Text text;
-    private Button button;
+    [SerializeField] private TMP_Text _text;
+    private Button _button;
 
-    private void Start()
+    public void SetLevelButtonActive(bool isInteractable)
     {
-        button = GetComponent<Button>();
-        text.text = _levelNumber.ToString();
-        button.onClick.AddListener(() => GameStateMachine.Instance.LoadLevel(_levelNumber));
+        _text.text = _levelNumber.ToString();
+        _button = GetComponent<Button>();
+        _button.onClick.AddListener(() => GameStateMachine.Instance.LoadLevel(_levelNumber));
+        _text.gameObject.SetActive(isInteractable);
+        _button.interactable = isInteractable;
     }
 }

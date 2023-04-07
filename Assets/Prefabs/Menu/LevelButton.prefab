@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelNumber: 0
-  text: {fileID: 7989453542880343609}
+  _text: {fileID: 7989453542880343609}
 --- !u!1 &6656254850918363652
 GameObject:
   m_ObjectHideFlags: 0
