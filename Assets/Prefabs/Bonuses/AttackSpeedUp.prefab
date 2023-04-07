@@ -185,6 +185,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6445033490895348324, guid: 93d9fd8f3e062bd46ac57740d9f4a9d8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 938a9384c4620864daf19b36af1d413c, type: 2}
+    - target: {fileID: 6445033490895348324, guid: 93d9fd8f3e062bd46ac57740d9f4a9d8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3882351479050259896, guid: 938a9384c4620864daf19b36af1d413c, type: 2}
     - target: {fileID: 7576166483188971298, guid: 93d9fd8f3e062bd46ac57740d9f4a9d8, type: 3}
       propertyPath: m_Name
       value: BonusTable

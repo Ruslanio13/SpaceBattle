@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb93d1f048166fe569991ecd0a2aecbe, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  Lines: 03000000030000000000000000000000
+  Lines: 05000000050000000000000000000000
   Walls:
   - {fileID: 329214998586248404, guid: 0d7f939cff6c1194a9b3574d00581909, type: 3}
   - {fileID: 8835776459804449041, guid: 6149aa78cdec0bb459ff80ffd172ce22, type: 3}
   - {fileID: 1561206525768898792, guid: c85b5266a81544943a7d6f5b5eb11cd1, type: 3}
   - {fileID: 3189768998838607616, guid: e94883d021fd18b428a7ea46f2abfd4b, type: 3}
-  MinLen: 2
+  MinLen: 3
   MaxLen: 6
