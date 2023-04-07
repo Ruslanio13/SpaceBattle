@@ -20,8 +20,8 @@ MonoBehaviour:
   - {fileID: 3189768998838607616, guid: e94883d021fd18b428a7ea46f2abfd4b, type: 3}
   EnemiesCount: 020000000200000002000000
   EnemiesPrefabs:
-  - {fileID: 7844843390442128688, guid: 2beca1a49885e90bc95b579899e81785, type: 3}
-  - {fileID: 7844843390442128688, guid: 2beca1a49885e90bc95b579899e81785, type: 3}
-  - {fileID: 7844843390442128688, guid: 2beca1a49885e90bc95b579899e81785, type: 3}
+  - {fileID: 5365887193806400031, guid: 0a8c68bbad4d2655b9648611c2f4c5a1, type: 3}
+  - {fileID: 5365887193806400031, guid: 0a8c68bbad4d2655b9648611c2f4c5a1, type: 3}
+  - {fileID: 5365887193806400031, guid: 0a8c68bbad4d2655b9648611c2f4c5a1, type: 3}
   MinLen: 3
   MaxLen: 6

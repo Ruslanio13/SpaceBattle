@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 5
-  _attackCooldown: 5
+  _attackCooldown: 3
   _moveSpeed: 0.5
   _bonusHandler: {fileID: 907679339916945829}
 --- !u!82 &198150865410177369

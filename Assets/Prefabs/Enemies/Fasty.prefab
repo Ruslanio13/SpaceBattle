@@ -140,7 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthPoints: 1
   _attackCooldown: 1
-  _moveSpeed: 3
+  _moveSpeed: 2.5
   _bonusHandler: {fileID: 5686937501385532985}
 --- !u!60 &2310067784875985671
 PolygonCollider2D:
