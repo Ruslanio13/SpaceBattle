@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731713, g: 0.13414736, b: 0.12107852, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414729, b: 0.121078685, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -810,8 +810,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u043C\u0435\u043D\u044E \u0431\u043B\u0438\u043D \u0435\u043C\u0430\u0435"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4a777cd515d34594fae21b39d6de7a59, type: 2}
-  m_sharedMaterial: {fileID: -4142120968701098551, guid: 4a777cd515d34594fae21b39d6de7a59, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 938a9384c4620864daf19b36af1d413c, type: 2}
+  m_sharedMaterial: {fileID: -3882351479050259896, guid: 938a9384c4620864daf19b36af1d413c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -835,7 +835,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.5
+  m_fontSize: 74.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

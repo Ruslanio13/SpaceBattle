@@ -2,12 +2,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(LevelGenerator))]
 public class GameStateMachine : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _levels;
-    public static GameStateMachine Instance;
-    private int _currentLevelNumber;
+    [SerializeField] private List<LevelPreset> _levels;
 
+    private LevelGenerator _levelGenerator;
+    
+    public static GameStateMachine Instance;
+    
     public UnityEvent OnGameOver;
     public UnityEvent OnVictory;
     private void Awake()
@@ -16,12 +19,14 @@ public class GameStateMachine : MonoBehaviour
         OnGameOver = new UnityEvent();
         OnVictory = new UnityEvent();
         DontDestroyOnLoad(this);
+        _levelGenerator = GetComponent<LevelGenerator>();
     }
 
     public void LoadLevel(int levelNumber)
     {
         _currentLevelNumber = levelNumber <= _levels.Length ? levelNumber : 1;
         LoadLevel();
+        _levelGenerator.Generate(_levels[levelNumber]);
     }
 
     public void LoadLevel() => SceneManager.LoadScene("Game");

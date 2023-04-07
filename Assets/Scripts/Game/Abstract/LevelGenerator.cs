@@ -5,33 +5,34 @@ using Random = UnityEngine.Random;
 
 public class LevelGenerator : MonoBehaviour
 {
+
     [SerializeField] private int _width;
     [SerializeField] private int _length;
     [SerializeField] private float _tileWidth;
     [SerializeField] private float _tileLength;
-    [SerializeField] private int _minLen;
-    [SerializeField] private int _maxLen;
 
-    [SerializeField] private float _centerRightSpawnX;
-    
-    [SerializeField] private List<int> _lines;
-    [SerializeField] private List<GameObject> _walls;
+    [SerializeField] private LevelPreset def;
+
+    private List<int> _lines;
+    private List<GameObject> _walls;
+    private int _minLen;
+    private int _maxLen;
     
     private List<Tuple<int, int>> _freeSpots;
 
-    private void Start()
+    private void Update()
     {
-        Generate();
+        if (Input.GetKeyDown(KeyCode.R))
+            Generate(def);
     }
 
-    //private void Update()
-    //{
-    //    if(Input.GetKeyDown(KeyCode.R))
-    //        Generate();
-    //}
-
-    public void Generate()
+    public void Generate(LevelPreset preset)
     {
+        _walls = preset.Walls;
+        _lines = preset.Lines;
+        _minLen = preset.MinLen;
+        _maxLen = preset.MaxLen;
+        
         _freeSpots = new List<Tuple<int, int>>();
         if (_lines.Count != _walls.Count)
             throw new Exception("Lines and walls lists in LevelGenerator are not the same size");
@@ -69,14 +70,14 @@ public class LevelGenerator : MonoBehaviour
     private void GenerateHorLine(GameObject wall, int amount)
     {
         GameObject newWall;
-        Tuple<int,int> newPos;
+        Tuple<int, int> newPos;
         int rand;
         int length;
         for (int line = 0; line < amount; line++)
         {
             length = Random.Range(_minLen, _maxLen + 1);
             rand = Random.Range(0, _freeSpots.Count);
-            newPos = _freeSpots[rand]; 
+            newPos = _freeSpots[rand];
             for (int block = 0; block < length; block++)
             {
                 newWall = Instantiate(wall);
@@ -86,25 +87,25 @@ public class LevelGenerator : MonoBehaviour
 
                 if (newPos.Item1 != _length && _freeSpots.Contains(new Tuple<int, int>(newPos.Item1 + 1, newPos.Item2)))
                     newPos = new Tuple<int, int>(newPos.Item1 + 1, newPos.Item2);
-                else if ( newPos.Item1 != 0 && _freeSpots.Contains(new Tuple<int, int>(newPos.Item1 - 1, newPos.Item2)))
+                else if (newPos.Item1 != 0 && _freeSpots.Contains(new Tuple<int, int>(newPos.Item1 - 1, newPos.Item2)))
                     newPos = new Tuple<int, int>(newPos.Item1 - 1, newPos.Item2);
                 else
                     break;
             }
         }
     }
-    
+
     private void GenerateVertLine(GameObject wall, int amount)
     {
         GameObject newWall;
-        Tuple<int,int> newPos;
+        Tuple<int, int> newPos;
         int rand;
         int length;
         for (int line = 0; line < amount; line++)
         {
             length = Random.Range(_minLen, _maxLen + 1);
             rand = Random.Range(0, _freeSpots.Count);
-            newPos = _freeSpots[rand]; 
+            newPos = _freeSpots[rand];
             for (int block = 0; block < length; block++)
             {
                 newWall = Instantiate(wall);
@@ -114,7 +115,7 @@ public class LevelGenerator : MonoBehaviour
 
                 if (newPos.Item2 != _width && _freeSpots.Contains(new Tuple<int, int>(newPos.Item1, newPos.Item2 + 1)))
                     newPos = new Tuple<int, int>(newPos.Item1, newPos.Item2 + 1);
-                else if ( newPos.Item2 != 0 && _freeSpots.Contains(new Tuple<int, int>(newPos.Item1, newPos.Item2 - 1)))
+                else if (newPos.Item2 != 0 && _freeSpots.Contains(new Tuple<int, int>(newPos.Item1, newPos.Item2 - 1)))
                     newPos = new Tuple<int, int>(newPos.Item1, newPos.Item2 - 1);
                 else
                     break;
